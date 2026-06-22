@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>II · 经济学视角 · 《视角》</title>
+  <meta name="description" content="从供需、交易、成本、激励的角度看 Agent 时代的微技能市场。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style-book.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+<div class="bk-binding" aria-hidden="true"></div>
+
+<nav class="bk-nav" aria-label="主导航">
+  <div class="container bk-nav__inner">
+    <a class="bk-nav__brand" href="../index.html">
+      <img class="logo-mark" src="../img/logo.svg" alt="《视角》" />
+      <span class="logo-text">Perspectives</span>
+    </a>
+    <ul class="bk-nav__links">
+      <li><a href="../index.html">Cover</a></li>
+      <li><a href="../intro.html">Preface</a></li>
+      <li><a href="../index.html#perspectives">Lenses</a></li>
+      <li><a href="../archive.html">Index</a></li>
+      <li><a href="../about.html">Colophon</a></li>
+      <li><a href="https://github.com/jeekeagle/zero-perspective-book" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+    </ul>
+    <div class="bk-nav__actions">
+      <button id="bkThemeToggle" class="bk-icon" type="button" aria-label="切换夜读" title="切换夜读">☾</button>
+    </div>
+  </div>
+</nav>
+
+<div class="bk-book">
+  <aside class="bk-toc" aria-label="目录">
+    <div class="bk-toc__title">Contents</div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Preface</div>
+      <ul class="bk-toc__list">
+        <li><a href="../intro.html">序言</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Volume I · Lenses</div>
+      <ul class="bk-toc__list">
+        <li><a href="when-models-think.html">I · 分类学视角</a></li>
+        <li><a href="skill-economy.html" class="active">II · 经济学视角</a></li>
+        <li><a href="prompt-as-program.html">III · 程序视角</a></li>
+        <li><a href="agent-topology.html">IV · 拓扑学视角</a></li>
+        <li><a href="from-tool-to-colleague.html">V · 关系视角</a></li>
+        <li><a href="notes-on-rag.html">VI · 架构视角</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Appendix</div>
+      <ul class="bk-toc__list">
+        <li><a href="../archive.html">Index</a></li>
+        <li><a href="../about.html">Colophon</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="bk-book__main">
+    <nav class="bk-breadcrumb" aria-label="面包屑">
+      <a href="../index.html">Cover</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <a href="../intro.html">Preface</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <span class="bk-breadcrumb__current">II · 经济学视角</span>
+    </nav>
+
+    <article>
+      <header>
+        <div class="bk-chapter-meta">
+          <span class="bk-chapter-meta__vol">Chapter II · 第一卷 · 第二章</span>
+          <span class="bk-chapter-meta__sep">·</span>
+          <time>2026.05</time>
+          <span class="bk-chapter-meta__sep">·</span>
+          <span>~7 min read</span>
+        </div>
+        <h1 class="bk-chapter__title">经济学视角</h1>
+        <p class="bk-chapter__subtitle">从供需、交易、成本、激励的角度看 Agent 时代的微技能市场</p>
+        <div class="bk-chapter__meta">
+          <span class="tag">Economics</span>
+          <span class="tag">Market</span>
+          <span class="tag">Incentives</span>
+        </div>
+      </header>
+
+      <div class="bk-chapter__body">
+        <h2><span class="num">I.</span>Skill 是什么</h2>
+        <p>
+          Skill(技能)在 Claude 的体系里是一段带 schema 的提示词 + 工具声明 + 调用入口,
+          在 GPT 的体系里是一份 <code>instructions.md</code> + 一组 <code>tools</code>,
+          在 MCP 里是一段对外暴露的服务描述。
+          但<strong>从经济学的视角看,Skill 是一种商品</strong> —— 它有作者、有买家、有价格、有被淘汰的宿命。
+        </p>
+
+        <h2><span class="num">II.</span>供给侧</h2>
+        <p>
+          Skill 的供给曲线有一个奇怪的特点:<strong>接近零边际成本</strong>。
+          写一份 Skill,前几个小时沉没成本高,但复用一万次,作者每多卖一份的成本几乎为零。
+          这是一个教科书级的"自然垄断"候选 —— 写得好又免费的 Skill 会迅速吞掉市场。
+        </p>
+        <p>
+          反过来,真正稀缺的供给是<strong>作者的时间</strong>:写 Skill 的"修、配、补"成本,
+          还有<strong>信用的积累</strong>(这份 Skill 在我的工作流里到底能不能用)。
+          这两件事都不是无限可复制的。
+        </p>
+
+        <h2><span class="num">III.</span>需求侧</h2>
+        <p>
+          需求侧是分层裂开的:
+        </p>
+        <ul>
+          <li><strong>to-C 尝鲜层</strong>:随便试一下,粘性极低;</li>
+          <li><strong>to-P 提效层</strong>:把 Skill 嵌进工作流,愿意为省时间付钱;</li>
+          <li><strong>to-B 系统层</strong>:Skill 不再是个人玩具,而是组织内部的"角色卡片",被采购、被治理。</li>
+        </ul>
+        <p>
+          这三层完全不同的人在想,他们的"价格弹性"差异巨大。to-C 对价格极度敏感,
+          to-P 在意 ROI,to-B 在意合规。
+        </p>
+
+        <h2><span class="num">IV.</span>激励机制的反转</h2>
+        <p>
+          传统开源靠"声望"驱动贡献;Skill 时代,<strong>声望本身的捕获机制被改写了</strong>。
+          一份 Skill 装进 5 万个工作流,作者可能完全不知道 —— 没有"download 数"、没有 star、没有引用。
+        </p>
+        <blockquote>
+          没有可见的回报,谁还愿意把最好的版本公开出来?
+          这是 Skill 经济的根本性未解问题。
+        </blockquote>
+
+        <h2><span class="num">V.</span>平台税与抽成</h2>
+        <p>
+          每一次 Skill 调用,平台(模型厂商、Agent 平台、调用中介)都有权抽成。
+          这像极了 App Store 之于 iOS。但 Agent 平台的"发现机制"比应用商店模糊得多,
+          平台的权力比 Apple 当年还要集中(因为没有替代品)。
+        </p>
+        <p>
+          我的预测:未来三年,会出现一次<strong>"平台税"的舆论战</strong>。
+          一边是平台主张"Skill 离不开我们的模型与分发",
+          一边是创作者主张"价值在我们这里"。
+          这场战争的结果,会定义 Agent 时代的财富分配。
+        </p>
+
+        <h2><span class="num">VI.</span>一个判断</h2>
+        <p>
+          我赌:Skill 不会像 App 一样爆炸成"千亿市场"。
+          它更可能像<strong>Linux 包管理</strong>—— 重要但不性感,被少数人维护,被多数人白嫖。
+          真正赚钱的,不是 Skill 本身,而是 Skill <em>嵌入的工作流</em>。
+        </p>
+
+        <hr>
+        <p style="font-family: var(--book-font-italic); font-style: italic; color: var(--bk-ink-faint); text-align: center; font-size: 1rem; letter-spacing: 0.05em;">
+          —— End of Chapter II · 经济学视角 ——
+        </p>
+      </div>
+
+      <nav class="bk-chapter-nav">
+        <a class="prev" href="when-models-think.html">
+          <span class="label">Previous</span>
+          <span class="title">I · 分类学视角</span>
+        </a>
+        <a class="next" href="prompt-as-program.html">
+          <span class="label">Next Chapter</span>
+          <span class="title">III · 程序视角</span>
+        </a>
+      </nav>
+
+      <div class="bk-chapter-edit">
+        <a href="https://github.com/jeekeagle/zero-perspective-book/edit/main/pages/skill-economy.html">Edit this page</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book/issues/new">Report an issue</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book">View source</a>
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="bk-footer">
+  <div class="container">
+    <div class="bk-footer__crest">P</div>
+    <div class="bk-footer__title">Perspectives</div>
+    <p class="bk-footer__tagline">Six lenses, two methods, one quiet claim — about seeing.</p>
+    <div class="bk-footer__colophon">
+      © 2026 · Zero Lab · A non-commercial meditation, hand-bound on the web.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

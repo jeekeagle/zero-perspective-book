@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 24" fill="none" stroke="currentColor" stroke-width="1">
+  <!-- 居中菱形+圆点 -->
+  <circle cx="120" cy="12" r="2.5" fill="currentColor"/>
+  <path d="M112 12 L116 12 M124 12 L128 12" stroke-linecap="round"/>
+  <!-- 两侧虚线 -->
+  <path d="M10 12 L100 12" stroke-dasharray="2 4"/>
+  <path d="M140 12 L230 12" stroke-dasharray="2 4"/>
+  <!-- 末端菱形 -->
+  <path d="M5 12 L10 9 L15 12 L10 15 Z" fill="currentColor" opacity="0.6"/>
+  <path d="M225 12 L230 9 L235 12 L230 15 Z" fill="currentColor" opacity="0.6"/>
+</svg>

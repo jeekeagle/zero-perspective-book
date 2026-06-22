@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>III · 程序视角 · 《视角》</title>
+  <meta name="description" content="把提示词当作源码,看它如何获得类型、模块、版本这些程序性特征。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style-book.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+<div class="bk-binding" aria-hidden="true"></div>
+
+<nav class="bk-nav" aria-label="主导航">
+  <div class="container bk-nav__inner">
+    <a class="bk-nav__brand" href="../index.html">
+      <img class="logo-mark" src="../img/logo.svg" alt="《视角》" />
+      <span class="logo-text">Perspectives</span>
+    </a>
+    <ul class="bk-nav__links">
+      <li><a href="../index.html">Cover</a></li>
+      <li><a href="../intro.html">Preface</a></li>
+      <li><a href="../index.html#perspectives">Lenses</a></li>
+      <li><a href="../archive.html">Index</a></li>
+      <li><a href="../about.html">Colophon</a></li>
+      <li><a href="https://github.com/jeekeagle/zero-perspective-book" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+    </ul>
+    <div class="bk-nav__actions">
+      <button id="bkThemeToggle" class="bk-icon" type="button" aria-label="切换夜读" title="切换夜读">☾</button>
+    </div>
+  </div>
+</nav>
+
+<div class="bk-book">
+  <aside class="bk-toc" aria-label="目录">
+    <div class="bk-toc__title">Contents</div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Preface</div>
+      <ul class="bk-toc__list">
+        <li><a href="../intro.html">序言</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Volume I · Lenses</div>
+      <ul class="bk-toc__list">
+        <li><a href="when-models-think.html">I · 分类学视角</a></li>
+        <li><a href="skill-economy.html">II · 经济学视角</a></li>
+        <li><a href="prompt-as-program.html" class="active">III · 程序视角</a></li>
+        <li><a href="agent-topology.html">IV · 拓扑学视角</a></li>
+        <li><a href="from-tool-to-colleague.html">V · 关系视角</a></li>
+        <li><a href="notes-on-rag.html">VI · 架构视角</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Appendix</div>
+      <ul class="bk-toc__list">
+        <li><a href="../archive.html">Index</a></li>
+        <li><a href="../about.html">Colophon</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="bk-book__main">
+    <nav class="bk-breadcrumb" aria-label="面包屑">
+      <a href="../index.html">Cover</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <a href="../intro.html">Preface</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <span class="bk-breadcrumb__current">III · 程序视角</span>
+    </nav>
+
+    <article>
+      <header>
+        <div class="bk-chapter-meta">
+          <span class="bk-chapter-meta__vol">Chapter III · 第一卷 · 第三章</span>
+          <span class="bk-chapter-meta__sep">·</span>
+          <time>2026.05</time>
+          <span class="bk-chapter-meta__sep">·</span>
+          <span>~8 min read</span>
+        </div>
+        <h1 class="bk-chapter__title">程序视角</h1>
+        <p class="bk-chapter__subtitle">把提示词当作源码,看它如何获得类型、模块、版本这些程序性特征</p>
+        <div class="bk-chapter__meta">
+          <span class="tag">Programming</span>
+          <span class="tag">Prompt</span>
+          <span class="tag">DSL</span>
+        </div>
+      </header>
+
+      <div class="bk-chapter__body">
+        <h2><span class="num">I.</span>从自然语言到 DSL</h2>
+        <p>
+          早期写提示词,和写一段"恳切的信"差不多:礼貌、详细、希望对方能懂。
+          这种提示词就像一份没有注释、没有类型、全部塞在一个文件里的 PHP 早期代码——
+          能跑,但没人能维护。
+        </p>
+        <p>
+          今天的情况变了。一个严肃的 Prompt 工程,正在向一种新的<strong>领域特定语言(DSL)</strong>演化:
+          它有结构(章节分明的 System / Developer / User)、有变量(模板插值)、有函数(可调用的子 Prompt),
+          有类型(结构化输出)、有测试(eval suite),甚至有<strong>类型检查器</strong>(JSON schema + validator)。
+        </p>
+
+        <h2><span class="num">II.</span>提示词作为源码</h2>
+        <p>
+          把一段提示词拆开看,它已经有这些程序特征:
+        </p>
+        <ul>
+          <li><strong>类型</strong>:JSON schema、enum、format;</li>
+          <li><strong>函数</strong>:<code>@tool</code>、<code>@skill</code>、sub-prompt;</li>
+          <li><strong>模块</strong>:import 别人的 prompt 或 tool;</li>
+          <li><strong>版本</strong>:Git 仓库里的 <code>v1.2.3</code>;</li>
+          <li><strong>测试</strong>:eval suite、golden set;</li>
+          <li><strong>运行时</strong>:Prompt → LLM → Tool → 反馈环。</li>
+        </ul>
+        <p>
+          你几乎可以把它当作一种<strong>"运行在大模型上的脚本语言"</strong>。
+        </p>
+
+        <h2><span class="num">III.</span>版本管理</h2>
+        <p>
+          这是被严重低估的一环。
+          一段 prompt 的"v1"和"v2"在行为上可能差异巨大(模型换了、上下文窗口变了、加了示例)。
+          但很多人还在用<strong>文件名后缀</strong>(<code>prompt-v3-final.md</code>)管它。
+        </p>
+        <blockquote>
+          没有版本管理的 prompt,迟早会让团队"以谁的版本为准"开一场永远开不完的会。
+        </blockquote>
+
+        <h2><span class="num">IV.</span>提示词的"运行时"</h2>
+        <p>
+          一段 prompt 不是孤立执行的,它有自己的运行时:
+        </p>
+        <pre><code>用户输入 → 模板渲染 → 上下文组装 → 模型调用
+                                ↓
+                          工具调用 / 子 prompt
+                                ↓
+                          结果解析 + 校验
+                                ↓
+                            输出 / 失败重试</code></pre>
+        <p>
+          看清这条链路,你就理解了为什么"调 prompt"常常<strong>不是改文本</strong>,
+          而是在改这条链路里的某一段(改模板、改上下文、改工具、改错误处理)。
+        </p>
+
+        <h2><span class="num">V.</span>它不是程序</h2>
+        <p>
+          我必须诚实地说:prompt <em>像</em>程序,但<strong>不是</strong>程序。
+        </p>
+        <ul>
+          <li>没有严格的执行顺序(模型可能"跳过"或"重排");</li>
+          <li>没有形式化的语义(同一句话可能产生不同的内部解释);</li>
+          <li>没有确定的输出(同一段 prompt,同样的输入,可能输出不一样)。</li>
+        </ul>
+        <p>
+          它是一种<strong>"近似确定性"</strong>的程序。这意味着传统的 linter、type checker、formal verification
+          都失效了,需要新的工具:基于 eval 的回归测试、基于人类偏好的 A/B、基于统计的 CI。
+        </p>
+
+        <h2><span class="num">VI.</span>一个判断</h2>
+        <p>
+          我赌:未来三年,会出现<strong>"Prompt Engineer ≠ 文案"</strong>的认知反转。
+          真正值钱的 prompt engineer,会越来越像<strong>系统程序员 + 实验科学家</strong>:
+          懂类型、懂版本、懂实验设计、懂统计。
+          而单纯的"调语气、加例子",会被模型自己内化掉。
+        </p>
+
+        <hr>
+        <p style="font-family: var(--book-font-italic); font-style: italic; color: var(--bk-ink-faint); text-align: center; font-size: 1rem; letter-spacing: 0.05em;">
+          —— End of Chapter III · 程序视角 ——
+        </p>
+      </div>
+
+      <nav class="bk-chapter-nav">
+        <a class="prev" href="skill-economy.html">
+          <span class="label">Previous</span>
+          <span class="title">II · 经济学视角</span>
+        </a>
+        <a class="next" href="agent-topology.html">
+          <span class="label">Next Chapter</span>
+          <span class="title">IV · 拓扑学视角</span>
+        </a>
+      </nav>
+
+      <div class="bk-chapter-edit">
+        <a href="https://github.com/jeekeagle/zero-perspective-book/edit/main/pages/prompt-as-program.html">Edit this page</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book/issues/new">Report an issue</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book">View source</a>
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="bk-footer">
+  <div class="container">
+    <div class="bk-footer__crest">P</div>
+    <div class="bk-footer__title">Perspectives</div>
+    <p class="bk-footer__tagline">Six lenses, two methods, one quiet claim — about seeing.</p>
+    <div class="bk-footer__colophon">
+      © 2026 · Zero Lab · A non-commercial meditation, hand-bound on the web.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

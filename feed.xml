@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-Hans">
+  <title>《视角》 · Zero-Perspective-Book</title>
+  <subtitle>一本关于镜片的小书 —— 六副镜片,看清世界。</subtitle>
+  <link href="https://jeekeagle.github.io/zero-perspective-book/" rel="alternate"/>
+  <link href="https://jeekeagle.github.io/zero-perspective-book/feed.xml" rel="self"/>
+  <id>https://jeekeagle.github.io/zero-perspective-book/</id>
+  <updated>2026-06-22T00:00:00Z</updated>
+
+  <entry>
+    <title>I · 分类学视角</title>
+    <link href="https://jeekeagle.github.io/zero-perspective-book/pages/when-models-think.html"/>
+    <id>tag:jeekeagle.github.io,2026:zero-perspective-book/when-models-think</id>
+    <updated>2026-06-15T00:00:00Z</updated>
+    <summary>从分类原则、分类方法及其背后的认知逻辑、权力结构和演化规律看事物。</summary>
+  </entry>
+  <entry>
+    <title>II · 经济学视角</title>
+    <link href="https://jeekeagle.github.io/zero-perspective-book/pages/skill-economy.html"/>
+    <id>tag:jeekeagle.github.io,2026:zero-perspective-book/skill-economy</id>
+    <updated>2026-05-28T00:00:00Z</updated>
+    <summary>从供需、交易、成本、激励的角度看 Agent 时代的微技能市场。</summary>
+  </entry>
+  <entry>
+    <title>III · 程序视角</title>
+    <link href="https://jeekeagle.github.io/zero-perspective-book/pages/prompt-as-program.html"/>
+    <id>tag:jeekeagle.github.io,2026:zero-perspective-book/prompt-as-program</id>
+    <updated>2026-05-10T00:00:00Z</updated>
+    <summary>把提示词当作源码,看它如何获得类型、模块、版本这些程序性特征。</summary>
+  </entry>
+  <entry>
+    <title>IV · 拓扑学视角</title>
+    <link href="https://jeekeagle.github.io/zero-perspective-book/pages/agent-topology.html"/>
+    <id>tag:jeekeagle.github.io,2026:zero-perspective-book/agent-topology</id>
+    <updated>2026-04-22T00:00:00Z</updated>
+    <summary>把 Agent 协作画成图,看串行、并行、投票、监督这些结构背后的组织哲学。</summary>
+  </entry>
+  <entry>
+    <title>V · 关系视角</title>
+    <link href="https://jeekeagle.github.io/zero-perspective-book/pages/from-tool-to-colleague.html"/>
+    <id>tag:jeekeagle.github.io,2026:zero-perspective-book/from-tool-to-colleague</id>
+    <updated>2026-04-03T00:00:00Z</updated>
+    <summary>从工具-使用者到同事-同事:人机关系的一次范式转移。</summary>
+  </entry>
+  <entry>
+    <title>VI · 架构视角</title>
+    <link href="https://jeekeagle.github.io/zero-perspective-book/pages/notes-on-rag.html"/>
+    <id>tag:jeekeagle.github.io,2026:zero-perspective-book/notes-on-rag</id>
+    <updated>2026-03-18T00:00:00Z</updated>
+    <summary>从知识的版本、引用、按需加载,看 RAG 改变了什么、没改变什么。</summary>
+  </entry>
+</feed>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preface · 《视角》</title>
+  <meta name="description" content="序言:为什么要开这间镜片铺子 —— 关于本书的缘起、读法与原则。" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style-book.css" />
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<div class="bk-binding" aria-hidden="true"></div>
+
+<nav class="bk-nav" aria-label="主导航">
+  <div class="container bk-nav__inner">
+    <a class="bk-nav__brand" href="index.html">
+      <img class="logo-mark" src="img/logo.svg" alt="《视角》" />
+      <span class="logo-text">Perspectives</span>
+    </a>
+    <ul class="bk-nav__links">
+      <li><a href="index.html">Cover</a></li>
+      <li><a href="intro.html" class="active">Preface</a></li>
+      <li><a href="index.html#perspectives">Lenses</a></li>
+      <li><a href="archive.html">Index</a></li>
+      <li><a href="about.html">Colophon</a></li>
+      <li><a href="https://github.com/jeekeagle/zero-perspective-book" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+    </ul>
+    <div class="bk-nav__actions">
+      <button id="bkThemeToggle" class="bk-icon" type="button" aria-label="切换夜读" title="切换夜读">☾</button>
+    </div>
+  </div>
+</nav>
+
+<!-- 书式两栏:左侧目录 + 右侧主页面 -->
+<div class="bk-book">
+
+  <!-- 左侧目录 -->
+  <aside class="bk-toc" aria-label="目录">
+    <div class="bk-toc__title">Contents</div>
+
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Preface</div>
+      <ul class="bk-toc__list">
+        <li><a href="intro.html" class="active">序言 · Preface</a></li>
+      </ul>
+    </div>
+
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Volume I · Lenses</div>
+      <ul class="bk-toc__list">
+        <li><a href="pages/when-models-think.html">I · 分类学视角</a></li>
+        <li><a href="pages/skill-economy.html">II · 经济学视角</a></li>
+        <li><a href="pages/prompt-as-program.html">III · 程序视角</a></li>
+        <li><a href="pages/agent-topology.html">IV · 拓扑学视角</a></li>
+        <li><a href="pages/from-tool-to-colleague.html">V · 关系视角</a></li>
+        <li><a href="pages/notes-on-rag.html">VI · 架构视角</a></li>
+      </ul>
+    </div>
+
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Appendix</div>
+      <ul class="bk-toc__list">
+        <li><a href="archive.html">Index · 索引</a></li>
+        <li><a href="about.html">Colophon · 版权页</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- 主书页 -->
+  <main class="bk-book__main">
+    <nav class="bk-breadcrumb" aria-label="面包屑">
+      <a href="index.html">Cover</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <span class="bk-breadcrumb__current">Preface</span>
+    </nav>
+
+    <article>
+      <header>
+        <div class="bk-chapter-meta">
+          <span class="bk-chapter-meta__vol">Preface · 序章</span>
+          <span class="bk-chapter-meta__sep">·</span>
+          <span>Last Revised June 2026</span>
+        </div>
+        <h1 class="bk-chapter__title">序言:为什么要开这间镜片铺子</h1>
+        <p class="bk-chapter__subtitle">关于本书的缘起、读法与原则</p>
+      </header>
+
+      <div class="bk-prose">
+        <p>
+          苏轼题西林壁:"<em>横看成岭侧成峰,远近高低各不同。不识庐山真面目,只缘身在此山中。</em>"
+          —— 这首诗其实就是一篇视角论。一千年前的诗人,已经知道了:
+          <strong>看到的形状,取决于你站的位置</strong>。
+        </p>
+
+        <h2>I. 为什么是"镜片"</h2>
+        <p>
+          我越来越觉得,我们不缺观点,缺的是<strong>看观点的视角</strong>。
+          一个人能戴几副眼镜,决定了他能看到几层世界。
+        </p>
+        <p>
+          Agent 时代(约 2023 至今)的技术演化速度,让"过时"变成一个以周为单位的概念。
+          与其追每一条具体的产品线和模型,我更愿意沉淀<strong>看这些变化的方法</strong>。
+          一副好的镜片,可以用十年;一条具体新闻,三天就过期。
+        </p>
+        <p>
+          这就是"镜片铺子"的来历 —— 不是给答案,陈列镜片。
+          你戴哪副、取哪副、换哪副,自己决定。
+        </p>
+
+        <h2>II. 这本书长什么样</h2>
+        <p>
+          本书按"卷 / 章"两层组织。
+        </p>
+        <blockquote>
+          <strong>Volume I · Lenses</strong> —— 六章镜片,每章一副:分类学、经济学、程序、拓扑、关系、架构。<br>
+          <strong>Volume II · Methods</strong> —— 两章工具:锻造法(怎么造出视角)+ 检验法(怎么知道它有没有用)。<br>
+          <strong>Appendix</strong> —— 索引、版权页。
+        </blockquote>
+        <p>
+          每一章按"序 → 视角来源 → 核心观点 → 应用 → 案例 → 局限 → 结语"的固定结构写。
+          这样你可以跳读、可以对比、可以快速找到某一类视角。
+        </p>
+
+        <h2>III. 几条原则</h2>
+        <p>在读这本书之前,先告诉你我会怎么写、不会怎么写 —— 这样你读的时候心里有数:</p>
+
+        <p>
+          <strong>不追求客观,只追求真实</strong>。<br>
+          我写"我戴这副眼镜看到什么",不写"事实是"。同一个对象,不同眼镜下不一样 —— 这是视角的本质,不是缺陷。
+        </p>
+        <p>
+          <strong>带时间戳</strong>。<br>
+          每篇都有日期。视角有保质期,环境一变它就失效。我宁可日后被打脸,也不要装作一贯正确。
+        </p>
+        <p>
+          <strong>不做导购</strong>。<br>
+          这里不会有"必戴的 10 副眼镜"。如果有,我也想先问一句"你看到的到底是什么,需要换眼镜吗?"
+        </p>
+        <p>
+          <strong>元视角也写</strong>。<br>
+          关于"视角本身"的视角,在这里也会写。比如:什么时候该换眼镜?一副好眼镜的标准是什么?视角会不会欺骗我?
+        </p>
+
+        <h2>IV. 它不是什么</h2>
+        <p>
+          不是一本《百种视角大全》(系统性的东西会被快速打脸),
+          不是一个教程站(我写的时候读者是未来的我自己,不是小白),
+          也不是一个 newsletter(我受不了每周交稿的压力)。
+        </p>
+        <p>
+          它更像你写代码时随手开的一个 <code>lenses.md</code> ,
+          只不过这个 lenses 在 GitHub Pages 上,谁都能戴上、取下、再换一副。
+        </p>
+
+        <h2>V. 读法建议</h2>
+        <p>
+          如果你第一次来,建议先读<strong>分类学视角</strong>(第一章)和<strong>关系视角</strong>(第五章)。
+          这两章一个是"看事物怎么看",一个是"看 AI 怎么看"—— 一头一尾,把整本书的脊梁搭起来。
+        </p>
+        <p>
+          如果你是带着具体问题来的,直接跳到对应那一章就好。每一章都独立,不必按序。
+        </p>
+        <p>
+          如果你只是来随便翻翻,那随便翻就好。这里没有考试,没有先后,没有"正确读法"。
+        </p>
+      </div>
+
+      <nav class="bk-chapter-nav">
+        <a class="prev" href="index.html">
+          <span class="label">Back to Cover</span>
+          <span class="title">本书封面</span>
+        </a>
+        <a class="next" href="pages/when-models-think.html">
+          <span class="label">Next Chapter</span>
+          <span class="title">I · 分类学视角</span>
+        </a>
+      </nav>
+
+      <div class="bk-chapter-edit">
+        <a href="https://github.com/jeekeagle/zero-perspective-book/edit/main/intro.html">Edit this page</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book/issues/new">Report an issue</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book">View source</a>
+      </div>
+    </article>
+  </main>
+</div>
+
+<!-- 页脚(版权页) -->
+<footer class="bk-footer">
+  <div class="container">
+    <div class="bk-footer__crest">P</div>
+    <div class="bk-footer__title">Perspectives</div>
+    <p class="bk-footer__tagline">Six lenses, two methods, one quiet claim — about seeing.</p>
+    <div class="bk-footer__colophon">
+      © 2026 · Zero Lab · Set in Cormorant Garamond, Cinzel &amp; EB Garamond<br>
+      A non-commercial meditation, hand-bound on the web.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

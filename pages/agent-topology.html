@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IV · 拓扑学视角 · 《视角》</title>
+  <meta name="description" content="把 Agent 协作画成图,看串行、并行、投票、监督这些结构背后的组织哲学。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style-book.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+<div class="bk-binding" aria-hidden="true"></div>
+
+<nav class="bk-nav" aria-label="主导航">
+  <div class="container bk-nav__inner">
+    <a class="bk-nav__brand" href="../index.html">
+      <img class="logo-mark" src="../img/logo.svg" alt="《视角》" />
+      <span class="logo-text">Perspectives</span>
+    </a>
+    <ul class="bk-nav__links">
+      <li><a href="../index.html">Cover</a></li>
+      <li><a href="../intro.html">Preface</a></li>
+      <li><a href="../index.html#perspectives">Lenses</a></li>
+      <li><a href="../archive.html">Index</a></li>
+      <li><a href="../about.html">Colophon</a></li>
+      <li><a href="https://github.com/jeekeagle/zero-perspective-book" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+    </ul>
+    <div class="bk-nav__actions">
+      <button id="bkThemeToggle" class="bk-icon" type="button" aria-label="切换夜读" title="切换夜读">☾</button>
+    </div>
+  </div>
+</nav>
+
+<div class="bk-book">
+  <aside class="bk-toc" aria-label="目录">
+    <div class="bk-toc__title">Contents</div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Preface</div>
+      <ul class="bk-toc__list">
+        <li><a href="../intro.html">序言</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Volume I · Lenses</div>
+      <ul class="bk-toc__list">
+        <li><a href="when-models-think.html">I · 分类学视角</a></li>
+        <li><a href="skill-economy.html">II · 经济学视角</a></li>
+        <li><a href="prompt-as-program.html">III · 程序视角</a></li>
+        <li><a href="agent-topology.html" class="active">IV · 拓扑学视角</a></li>
+        <li><a href="from-tool-to-colleague.html">V · 关系视角</a></li>
+        <li><a href="notes-on-rag.html">VI · 架构视角</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Appendix</div>
+      <ul class="bk-toc__list">
+        <li><a href="../archive.html">Index</a></li>
+        <li><a href="../about.html">Colophon</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="bk-book__main">
+    <nav class="bk-breadcrumb" aria-label="面包屑">
+      <a href="../index.html">Cover</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <a href="../intro.html">Preface</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <span class="bk-breadcrumb__current">IV · 拓扑学视角</span>
+    </nav>
+
+    <article>
+      <header>
+        <div class="bk-chapter-meta">
+          <span class="bk-chapter-meta__vol">Chapter IV · 第一卷 · 第四章</span>
+          <span class="bk-chapter-meta__sep">·</span>
+          <time>2026.04</time>
+          <span class="bk-chapter-meta__sep">·</span>
+          <span>~9 min read</span>
+        </div>
+        <h1 class="bk-chapter__title">拓扑学视角</h1>
+        <p class="bk-chapter__subtitle">把 Agent 协作画成图,看串行、并行、投票、监督这些结构背后的组织哲学</p>
+        <div class="bk-chapter__meta">
+          <span class="tag">Topology</span>
+          <span class="tag">Structure</span>
+          <span class="tag">Multi-Agent</span>
+        </div>
+      </header>
+
+      <div class="bk-chapter__body">
+        <h2><span class="num">I.</span>把协作画成图</h2>
+        <p>
+          假设你面前有 N 个 agent,每个 agent 会调一些工具、读一些上下文、产出一些中间结果。
+          你想理解它们怎么合作 —— 别看代码,<strong>看图</strong>。
+        </p>
+        <p>
+          节点是 agent 或工具,边是"调用 / 读 / 写"。
+          几乎所有 multi-agent 系统都可以归到下面几种<strong>基本拓扑</strong>上:
+        </p>
+        <ul>
+          <li><strong>Pipeline</strong>:线性串行,A → B → C;</li>
+          <li><strong>Fan-out / Fan-in</strong>:一拖多,合并结果;</li>
+          <li><strong>Hub-and-spoke</strong>:一个调度,周围一圈 worker;</li>
+          <li><strong>Mesh</strong>:谁都能调谁(也是最容易出乱子的);</li>
+          <li><strong>Loop</strong>:自己审自己、自己改自己。</li>
+        </ul>
+
+        <h2><span class="num">II.</span>拓扑决定性质</h2>
+        <p>
+          拓扑不是装饰。<strong>它决定系统的性质</strong>。
+        </p>
+        <blockquote>
+          同样的 agent 能力,放在不同的拓扑里,会做出完全不同的系统。
+        </blockquote>
+        <p>
+          举三个例子:
+        </p>
+        <ul>
+          <li><strong>Pipeline</strong>:可控、稳定、易调试,但<em>串行延迟 = 各环节延迟之和</em>;</li>
+          <li><strong>Fan-out</strong>:快(并行)、可对比(多视角),但<em>成本 = N 倍</em>;</li>
+          <li><strong>Loop(反思)</strong>:质量高(自我修正),但<em>不可预测完成时间</em>,还可能死循环。</li>
+        </ul>
+
+        <h2><span class="num">III.</span>监督关系的拓扑</h2>
+        <p>
+          当 agent 能改 agent 的输出,系统就有了<strong>监督</strong>关系。
+          监督关系画出来是树:每个节点最多一个父,但可以有多个子。
+        </p>
+        <p>
+          这个看似简单的图,藏着组织学的老问题:
+        </p>
+        <ul>
+          <li><strong>层级数</strong>:深监督树更稳但更慢;</li>
+          <li><strong>层级数 = 0</strong>(mesh):快但乱;</li>
+          <li><strong>监督者是否同质</strong>:同质监督 → 容易被群体偏见带偏;异质监督 → 慢但稳。</li>
+        </ul>
+        <p>
+          在人类社会里,这些早就被<strong>管理学</strong>研究透了。
+          换到 agent 系统里,问题一模一样,只是变量变了(人变成了 LLM 调用,会议变成了 token 流)。
+        </p>
+
+        <h2><span class="num">IV.</span>投票:民主的拓扑</h2>
+        <p>
+          让 N 个 agent 独立出方案,再让一个 aggregator 选/合并,这是 multi-agent 系统的"民主化"操作。
+          它之所以有效,是因为:
+        </p>
+        <ul>
+          <li><strong>去相关性</strong>:不同 prompt / 不同样本 → 不同错误模式;</li>
+          <li><strong>覆盖性</strong>:多个视角合起来比单一视角更全;</li>
+          <li><strong>自我校准</strong>:多数派往往比极端派更接近真相。</li>
+        </ul>
+        <p>
+          它的代价:贵(N 倍 token)、慢(N 倍 wall-clock)、可能"多数派暴政"。
+        </p>
+
+        <h2><span class="num">V.</span>什么时候不该复杂化</h2>
+        <p>
+          我见过太多"为了 multi-agent 而 multi-agent"的系统。
+          一个 prompt 能干的事,非要拆 5 个 agent 来做,延迟涨 4 倍、token 涨 6 倍,质量涨 5%。
+        </p>
+        <blockquote>
+          拓扑的复杂度,不应该超过<strong>任务的本质复杂度</strong>。
+          一句话能讲清楚的事,就别开董事会。
+        </blockquote>
+
+        <h2><span class="num">VI.</span>一个判断</h2>
+        <p>
+          我赌:2026-2027 年会出现一波"拓扑学复兴"。
+          大家会发现,multi-agent 的<strong>真正难点不是 prompt,而是图</strong>。
+          会有人写"Agent Design Patterns"(对应 GoF 之于 OO),
+          会有人做"Agent 编排可视化",会有人把<em>组织行为学</em>搬进 agent 系统。
+        </p>
+        <p>
+          看到这一章的读者,提前补一补图论和分布式系统,会划算。
+        </p>
+
+        <hr>
+        <p style="font-family: var(--book-font-italic); font-style: italic; color: var(--bk-ink-faint); text-align: center; font-size: 1rem; letter-spacing: 0.05em;">
+          —— End of Chapter IV · 拓扑学视角 ——
+        </p>
+      </div>
+
+      <nav class="bk-chapter-nav">
+        <a class="prev" href="prompt-as-program.html">
+          <span class="label">Previous</span>
+          <span class="title">III · 程序视角</span>
+        </a>
+        <a class="next" href="from-tool-to-colleague.html">
+          <span class="label">Next Chapter</span>
+          <span class="title">V · 关系视角</span>
+        </a>
+      </nav>
+
+      <div class="bk-chapter-edit">
+        <a href="https://github.com/jeekeagle/zero-perspective-book/edit/main/pages/agent-topology.html">Edit this page</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book/issues/new">Report an issue</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book">View source</a>
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="bk-footer">
+  <div class="container">
+    <div class="bk-footer__crest">P</div>
+    <div class="bk-footer__title">Perspectives</div>
+    <p class="bk-footer__tagline">Six lenses, two methods, one quiet claim — about seeing.</p>
+    <div class="bk-footer__colophon">
+      © 2026 · Zero Lab · A non-commercial meditation, hand-bound on the web.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

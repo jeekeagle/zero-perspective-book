@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VI · 架构视角 · 《视角》</title>
+  <meta name="description" content="从知识的版本、引用、按需加载,看 RAG 改变了什么、没改变什么。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style-book.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+<div class="bk-binding" aria-hidden="true"></div>
+
+<nav class="bk-nav" aria-label="主导航">
+  <div class="container bk-nav__inner">
+    <a class="bk-nav__brand" href="../index.html">
+      <img class="logo-mark" src="../img/logo.svg" alt="《视角》" />
+      <span class="logo-text">Perspectives</span>
+    </a>
+    <ul class="bk-nav__links">
+      <li><a href="../index.html">Cover</a></li>
+      <li><a href="../intro.html">Preface</a></li>
+      <li><a href="../index.html#perspectives">Lenses</a></li>
+      <li><a href="../archive.html">Index</a></li>
+      <li><a href="../about.html">Colophon</a></li>
+      <li><a href="https://github.com/jeekeagle/zero-perspective-book" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+    </ul>
+    <div class="bk-nav__actions">
+      <button id="bkThemeToggle" class="bk-icon" type="button" aria-label="切换夜读" title="切换夜读">☾</button>
+    </div>
+  </div>
+</nav>
+
+<div class="bk-book">
+  <aside class="bk-toc" aria-label="目录">
+    <div class="bk-toc__title">Contents</div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Preface</div>
+      <ul class="bk-toc__list">
+        <li><a href="../intro.html">序言</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Volume I · Lenses</div>
+      <ul class="bk-toc__list">
+        <li><a href="when-models-think.html">I · 分类学视角</a></li>
+        <li><a href="skill-economy.html">II · 经济学视角</a></li>
+        <li><a href="prompt-as-program.html">III · 程序视角</a></li>
+        <li><a href="agent-topology.html">IV · 拓扑学视角</a></li>
+        <li><a href="from-tool-to-colleague.html">V · 关系视角</a></li>
+        <li><a href="notes-on-rag.html" class="active">VI · 架构视角</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Appendix</div>
+      <ul class="bk-toc__list">
+        <li><a href="../archive.html">Index</a></li>
+        <li><a href="../about.html">Colophon</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="bk-book__main">
+    <nav class="bk-breadcrumb" aria-label="面包屑">
+      <a href="../index.html">Cover</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <a href="../intro.html">Preface</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <span class="bk-breadcrumb__current">VI · 架构视角</span>
+    </nav>
+
+    <article>
+      <header>
+        <div class="bk-chapter-meta">
+          <span class="bk-chapter-meta__vol">Chapter VI · 第一卷 · 第六章</span>
+          <span class="bk-chapter-meta__sep">·</span>
+          <time>2026.03</time>
+          <span class="bk-chapter-meta__sep">·</span>
+          <span>~10 min read</span>
+        </div>
+        <h1 class="bk-chapter__title">架构视角</h1>
+        <p class="bk-chapter__subtitle">从知识的版本、引用、按需加载,看 RAG 改变了什么、没改变什么</p>
+        <div class="bk-chapter__meta">
+          <span class="tag">Architecture</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Memory</span>
+        </div>
+      </header>
+
+      <div class="bk-chapter__body">
+        <h2><span class="num">I.</span>RAG 解决了什么</h2>
+        <p>
+          一个朴素的问题:模型"知道"的事情是有限的(它的训练数据截止那一刻为止),
+          而且它在那些事上的记忆也是<strong>压缩的、扭曲的</strong>(参数量是有限的)。
+        </p>
+        <p>
+          RAG(Retrieval-Augmented Generation)的回应很直接:
+          <strong>别让模型什么都记,让它在需要的时候去查</strong>。
+          它把"知识"从模型参数里搬到了外部存储里。
+        </p>
+        <ul>
+          <li>想引用最新论文?查 arXiv;</li>
+          <li>想回答公司内部问题?查 Confluence;</li>
+          <li>想引用某段具体文档?查向量数据库。</li>
+        </ul>
+        <p>
+          模型的注意力被"按需支付"在<strong>真正相关</strong>的知识上 —— 而不是把所有可能性塞进上下文窗口。
+        </p>
+
+        <h2><span class="num">II.</span>知识的三种状态</h2>
+        <p>
+          从架构视角看,RAG 让知识有了<strong>三种状态</strong>:
+        </p>
+        <ol>
+          <li><strong>参数化的记忆</strong>(在模型权重里):快、模糊、难改;</li>
+          <li><strong>上下文窗口</strong>(在当前 prompt 里):精确、有上限、易失;</li>
+          <li><strong>外部知识库</strong>(在 RAG 后端):无限、可改、可治理。</li>
+        </ol>
+        <p>
+          这是范式变化。原来只有前两种;现在有了第三种,而且第三种会越来越主导。
+        </p>
+
+        <h2><span class="num">III.</span>引用与可追溯性</h2>
+        <p>
+          RAG 最大的隐性收益,是<strong>引用</strong>。
+          以前模型"凭印象"回答,出错你无据可查。
+          现在模型给答案,顺手给几个来源,你点过去就是原文。
+        </p>
+        <blockquote>
+          可追溯,等于可证伪。可证伪,等于可信任。
+        </blockquote>
+        <p>
+          但这是有代价的:你的知识库<strong>必须可治理</strong>——
+          来源要可信,版本要可追,访问要可控。
+          一份被污染的知识库,会让模型系统性地胡说八道。
+        </p>
+
+        <h2><span class="num">IV.</span>按需加载的工程</h2>
+        <p>
+          RAG 在工程上是<strong>"按需加载"</strong>的极致实现:
+        </p>
+        <pre><code>用户问 → 改写为检索 query → 向量检索 → 重排
+→ 取出 top-k 文档 → 拼进 prompt → 模型生成</code></pre>
+        <p>
+          每一步都是一个独立的优化空间:
+          改写、embedding、chunking、reranking、压缩、citation。
+          每一步都有自己的坑,有自己的论文。
+        </p>
+
+        <h2><span class="num">V.</span>RAG 没改变什么</h2>
+        <p>
+          实话:RAG <strong>没改变模型本身的智能上限</strong>。
+          它改变的是:<em>在特定任务上的表现</em>、<em>对新鲜事物的响应速度</em>、<em>可治理性</em>。
+        </p>
+        <p>
+          一个模型该胡说的地方,RAG 也救不了;
+          一个本来就不会的推理,RAG 也教不会。
+          RAG 是<strong>脚手架</strong>,不是<strong>地基</strong>。
+        </p>
+
+        <h2><span class="num">VI.</span>一个判断</h2>
+        <p>
+          我赌:未来三年,会形成一种<strong>"模型 + RAG + 工作流"</strong>的三层架构:
+        </p>
+        <ul>
+          <li><strong>模型</strong>:负责通用智能;</li>
+          <li><strong>RAG</strong>:负责事实与新鲜度;</li>
+          <li><strong>工作流(Agent / Skill)</strong>:负责稳定可重复的过程。</li>
+        </ul>
+        <p>
+          把这三层当一个 stack 来设计、来运维、来治理,
+          会变成 Agent 时代最基本的工程素养。
+        </p>
+
+        <hr>
+        <p style="font-family: var(--book-font-italic); font-style: italic; color: var(--bk-ink-faint); text-align: center; font-size: 1rem; letter-spacing: 0.05em;">
+          —— End of Chapter VI · 架构视角 ——
+        </p>
+      </div>
+
+      <nav class="bk-chapter-nav">
+        <a class="prev" href="from-tool-to-colleague.html">
+          <span class="label">Previous</span>
+          <span class="title">V · 关系视角</span>
+        </a>
+        <a class="next" href="../archive.html">
+          <span class="label">Next</span>
+          <span class="title">Index · 索引</span>
+        </a>
+      </nav>
+
+      <div class="bk-chapter-edit">
+        <a href="https://github.com/jeekeagle/zero-perspective-book/edit/main/pages/notes-on-rag.html">Edit this page</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book/issues/new">Report an issue</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book">View source</a>
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="bk-footer">
+  <div class="container">
+    <div class="bk-footer__crest">P</div>
+    <div class="bk-footer__title">Perspectives</div>
+    <p class="bk-footer__tagline">Six lenses, two methods, one quiet claim — about seeing.</p>
+    <div class="bk-footer__colophon">
+      © 2026 · Zero Lab · A non-commercial meditation, hand-bound on the web.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

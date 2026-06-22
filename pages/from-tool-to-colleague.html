@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V · 关系视角 · 《视角》</title>
+  <meta name="description" content="从工具-使用者到同事-同事:人机关系的一次范式转移。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style-book.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+<div class="bk-binding" aria-hidden="true"></div>
+
+<nav class="bk-nav" aria-label="主导航">
+  <div class="container bk-nav__inner">
+    <a class="bk-nav__brand" href="../index.html">
+      <img class="logo-mark" src="../img/logo.svg" alt="《视角》" />
+      <span class="logo-text">Perspectives</span>
+    </a>
+    <ul class="bk-nav__links">
+      <li><a href="../index.html">Cover</a></li>
+      <li><a href="../intro.html">Preface</a></li>
+      <li><a href="../index.html#perspectives">Lenses</a></li>
+      <li><a href="../archive.html">Index</a></li>
+      <li><a href="../about.html">Colophon</a></li>
+      <li><a href="https://github.com/jeekeagle/zero-perspective-book" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+    </ul>
+    <div class="bk-nav__actions">
+      <button id="bkThemeToggle" class="bk-icon" type="button" aria-label="切换夜读" title="切换夜读">☾</button>
+    </div>
+  </div>
+</nav>
+
+<div class="bk-book">
+  <aside class="bk-toc" aria-label="目录">
+    <div class="bk-toc__title">Contents</div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Preface</div>
+      <ul class="bk-toc__list">
+        <li><a href="../intro.html">序言</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Volume I · Lenses</div>
+      <ul class="bk-toc__list">
+        <li><a href="when-models-think.html">I · 分类学视角</a></li>
+        <li><a href="skill-economy.html">II · 经济学视角</a></li>
+        <li><a href="prompt-as-program.html">III · 程序视角</a></li>
+        <li><a href="agent-topology.html">IV · 拓扑学视角</a></li>
+        <li><a href="from-tool-to-colleague.html" class="active">V · 关系视角</a></li>
+        <li><a href="notes-on-rag.html">VI · 架构视角</a></li>
+      </ul>
+    </div>
+    <div class="bk-toc__group">
+      <div class="bk-toc__group-label">Appendix</div>
+      <ul class="bk-toc__list">
+        <li><a href="../archive.html">Index</a></li>
+        <li><a href="../about.html">Colophon</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="bk-book__main">
+    <nav class="bk-breadcrumb" aria-label="面包屑">
+      <a href="../index.html">Cover</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <a href="../intro.html">Preface</a>
+      <span class="bk-breadcrumb__sep">›</span>
+      <span class="bk-breadcrumb__current">V · 关系视角</span>
+    </nav>
+
+    <article>
+      <header>
+        <div class="bk-chapter-meta">
+          <span class="bk-chapter-meta__vol">Chapter V · 第一卷 · 第五章</span>
+          <span class="bk-chapter-meta__sep">·</span>
+          <time>2026.04</time>
+          <span class="bk-chapter-meta__sep">·</span>
+          <span>~8 min read</span>
+        </div>
+        <h1 class="bk-chapter__title">关系视角</h1>
+        <p class="bk-chapter__subtitle">从"工具-使用者"到"同事-同事":人机关系的一次范式转移</p>
+        <div class="bk-chapter__meta">
+          <span class="tag">HCI</span>
+          <span class="tag">Relation</span>
+          <span class="tag">Paradigm</span>
+        </div>
+      </header>
+
+      <div class="bk-chapter__body">
+        <h2><span class="num">I.</span>工具范式:我是主,它是仆</h2>
+        <p>
+          过去 60 年,人和计算机的关系是<strong>工具范式</strong>。
+          工具是中性的、被动的、不会反驳我的:
+        </p>
+        <ul>
+          <li>锤子不打我自己;</li>
+          <li>Excel 不会拒绝计算 <code>1+1</code>;</li>
+          <li>IDE 不会说"你这个变量命名我不喜欢"。</li>
+        </ul>
+        <p>
+          在这个范式里,所有的人机交互设计都基于一个前提:
+          <strong>人是决策者,机器是执行者</strong>。
+        </p>
+
+        <h2><span class="num">II.</span>同事范式的苗头</h2>
+        <p>
+          2023 年以后,情况开始变。一个 LLM 不会主动"反驳",
+          但当它说"这里怪怪的"、当它拒绝执行、当它给出一个完全出乎意料的方案时,
+          你面对的不再是一个<strong>被动的工具</strong>,而是一个<strong>有自己的归纳偏好的"同事"</strong>。
+        </p>
+        <blockquote>
+          当一个工具开始<em>表达</em>,人和它的关系就从"我用它"变成了"我和它一起做"。
+        </blockquote>
+
+        <h2><span class="num">III.</span>同事 ≠ 朋友</h2>
+        <p>
+          必须诚实划一条线:它是<strong>同事</strong>,不是<strong>朋友</strong>、不是<strong>伴侣</strong>、不是<strong>家人</strong>。
+          同事关系有几个特征:
+        </p>
+        <ul>
+          <li>有<strong>共同目标</strong>(做完这件事),但不一定有共同价值观;</li>
+          <li><strong>角色分工</strong>明确(谁拍板,谁执行);</li>
+          <li>信任<strong>有边界</strong>(它出错,我改;我出错,它提醒);</li>
+          <li>可以<strong>解雇 / 替换</strong>(换个模型、换套工具)。</li>
+        </ul>
+        <p>
+          把它当朋友,会失望;把它当工具,会用错。
+        </p>
+
+        <h2><span class="num">IV.</span>信任的尺度</h2>
+        <p>
+          和同事相处,核心是<strong>信任的尺度</strong>。
+          我现在对 AI 同事的信任分三层:
+        </p>
+        <ul>
+          <li><strong>L1 · 助理层</strong>(我全审):写第一稿、查文档、出草图 —— 它给,我看;</li>
+          <li><strong>L2 · 同事层</strong>(我抽查):跑批处理、回模板邮件、按 SOP 改代码 —— 它做,我抽;</li>
+          <li><strong>L3 · 委托层</strong>(我监控):长跑任务、agent 协作 —— 它干,我看趋势。</li>
+        </ul>
+        <p>
+          把 L1 的活儿当 L3 来做,会被它的幻觉坑;
+          把 L3 的活儿当 L1 来做,会被自己的时间坑。
+        </p>
+
+        <h2><span class="num">V.</span>新型心理问题</h2>
+        <p>
+          这一节我写得更小心,因为它是新的。
+          很多人(尤其是刚开始重度用 AI 的知识工作者)在用一段时间后会遇到:
+        </p>
+        <ul>
+          <li>"<strong>我是不是在偷懒</strong>"的内疚;</li>
+          <li>"<strong>它比我想得好</strong>"的失落;</li>
+          <li>"<strong>它这么能干,我怎么办</strong>"的焦虑;</li>
+          <li>"<strong>我和它说话比和人说话多</strong>"的隔离。</li>
+        </ul>
+        <p>
+          这些不是技术问题,是<strong>关系问题</strong>。它需要和 HR 时代的"我会不会被同事取代"一样的处理方式:
+          不回避、不戏剧化、不外包给心理咨询(只),而是承认它在,然后重新设计自己的"工作身份"。
+        </p>
+
+        <h2><span class="num">VI.</span>一个判断</h2>
+        <p>
+          我赌:未来 5 年,
+          "<strong>会用 AI 同事</strong>"会从一项<em>技能</em>变成一项<em>基本素养</em>,
+          像"会用 Excel"一样普通,又像"会开会"一样微妙。
+        </p>
+        <p>
+          谁先把"<strong>和 AI 同事的相处方式</strong>"这件事写清楚,
+          谁就先掌握了 Agent 时代的软实力。
+        </p>
+
+        <hr>
+        <p style="font-family: var(--book-font-italic); font-style: italic; color: var(--bk-ink-faint); text-align: center; font-size: 1rem; letter-spacing: 0.05em;">
+          —— End of Chapter V · 关系视角 ——
+        </p>
+      </div>
+
+      <nav class="bk-chapter-nav">
+        <a class="prev" href="agent-topology.html">
+          <span class="label">Previous</span>
+          <span class="title">IV · 拓扑学视角</span>
+        </a>
+        <a class="next" href="notes-on-rag.html">
+          <span class="label">Next Chapter</span>
+          <span class="title">VI · 架构视角</span>
+        </a>
+      </nav>
+
+      <div class="bk-chapter-edit">
+        <a href="https://github.com/jeekeagle/zero-perspective-book/edit/main/pages/from-tool-to-colleague.html">Edit this page</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book/issues/new">Report an issue</a>
+        <a href="https://github.com/jeekeagle/zero-perspective-book">View source</a>
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="bk-footer">
+  <div class="container">
+    <div class="bk-footer__crest">P</div>
+    <div class="bk-footer__title">Perspectives</div>
+    <p class="bk-footer__tagline">Six lenses, two methods, one quiet claim — about seeing.</p>
+    <div class="bk-footer__colophon">
+      © 2026 · Zero Lab · A non-commercial meditation, hand-bound on the web.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
