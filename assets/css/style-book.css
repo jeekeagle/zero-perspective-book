@@ -3,19 +3,24 @@
    ------------------------------------------------------------
    与 hub(墨韵/宣纸/朱砂/山水)刻意区分:
    - 西方精装古籍:深酒红皮装 + 金箔烫印 + 羊皮纸
-   - 字体:Cormorant Garamond / EB Garamond / Cinzel(全英文衬线)
+   - 字体:霞鹜文楷 LXGW WenKai(中英文统一,源自 hermes-doc.aigc.green)
    - 装饰:首字下沉、花式分隔符、烫金页码、皮革纹理
    - 主色调:羊皮纸 + 深酒红 + 古铜金
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap");
+/* 霞鹜文楷 Web Font —— 中英文统一字体(与 hermes-doc 一致) */
+@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@latest/style.css");
 
 /* ---------- 字体变量 ---------- */
 :root {
-  --book-font-body:   "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
-  --book-font-display:"Cinzel", "Cormorant Garamond", Georgia, serif;
-  --book-font-italic: "EB Garamond", "Cormorant Garamond", Georgia, serif;
-  --book-font-mono:   "JetBrains Mono", Consolas, "Courier New", monospace;
+  /* 正文:LXGW WenKai 统一处理中文与西文 */
+  --book-font-body:   "LXGW WenKai", "霞鹜文楷", "STKaiti", "KaiTi", "楷体", Georgia, "Times New Roman", serif;
+  /* 标题:同上,LXGW WenKai 自带 Latin 字符,可统一 */
+  --book-font-display:"LXGW WenKai", "霞鹜文楷", "STKaiti", "KaiTi", "楷体", Georgia, serif;
+  /* 斜体/引文:仍用同字体,通过 font-style 表达 */
+  --book-font-italic: "LXGW WenKai", "霞鹜文楷", "STKaiti", "KaiTi", "楷体", Georgia, serif;
+  /* 等宽:LXGW WenKai Mono,西文代码时回退到 JetBrains Mono */
+  --book-font-mono:   "LXGW WenKai Mono", "LXGW WenKai", "JetBrains Mono", Consolas, "Courier New", monospace;
 }
 
 /* ---------- 调色板(浅色:羊皮纸) ---------- */
